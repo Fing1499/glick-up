@@ -28,6 +28,7 @@ export const ccCommand = (program) => {
         if (statuses.length > 1) {
           const userAnswer = await inquirer.prompt(formatListStatusesToInquirerPrompts(statuses));
           if (userAnswer.status === "exit") {
+            console.log(ticketReturn.status.color);
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} status has not been changed!`));
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
           } else {
