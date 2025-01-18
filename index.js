@@ -25,18 +25,18 @@ program.command('cc <ticketId>')
   .action(async (ticketID, options) => {
     try {
       const ticketReturn = await get(`task/${ticketID}`);
-      git.addAll();
+      await git.add(".");
       if (options.messages) {
-        git.commit(`${ticketID} | ${options.message}`);
+        await git.commit(`${ticketID} | ${options.message}`);
       } else if (options.description) {
-        git.commit(`${ticketID} | ${ticketReturn.description}`);
+        await git.commit(`${ticketID} | ${ticketReturn.description}`);
       } else {
-        git.commit(`${ticketID} | ${ticketReturn.name}`);
+        await git.commit(`${ticketID} | ${ticketReturn.name}`);
       }
-      git.push();
+      await git.push();
       console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
     } catch (error) {
-      // console.error(error)
+      console.error(error)
     }
   })
 
