@@ -33,7 +33,7 @@ export const ccCommand = (program) => {
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} status has not been changed!`));
           } else {
             await update(`task/${ticketID}`, { status: userAnswer.status });
-            console.log(chalk.hex(selectedStatus.color).bold(`Ticket ${ticketID} status has been changed!`));
+            console.log(chalk.hex(selectedStatus.color).bold(`Ticket ${ticketID} status has been changed to ${selectedStatus.status}!`));
           }
         } else {
           console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} has been committed and pushed!`));

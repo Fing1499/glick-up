@@ -10,9 +10,10 @@ npm install -g clickup-cli
 
 ## Setup
 
-1. Create a `.env` file in the root directory with your ClickUp API token:
+1. Create a `.env` file in the root directory with your ClickUp API token and BASE_URL:
 ```
 CLICKUP_API_TOKEN=your_api_token_here
+BASE_URL=https://api.clickup.com/api/v2
 ```
 
 2. Make sure you have Node.js installed on your system.
