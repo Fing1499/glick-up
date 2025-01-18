@@ -27,6 +27,7 @@ export const ccCommand = (program) => {
         await git.push();
         if (statuses.length > 1) {
           const userAnswer = await inquirer.prompt(formatListStatusesToInquirerPrompts(statuses));
+          console.log(userAnswer);
           if (userAnswer.status === "exit") {
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} status has not been changed!`));
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
