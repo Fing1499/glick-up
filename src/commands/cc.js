@@ -65,6 +65,7 @@ const formatListStatusesToInquirerPrompts = (statuses) => {
         value: status.status,
         color: status.color || "#808080",
       })),
+      new inquirer.Separator(),
       { name: chalk.gray("Exit"), value: "exit" },
     ],
   };

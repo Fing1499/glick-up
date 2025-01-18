@@ -44,6 +44,36 @@ Example:
 glickup cc ABC123 -m "feat: implement new feature"
 ```
 
+### explore
+
+Navigate through your ClickUp workspace hierarchy and view task details.
+
+```bash
+glickup explore
+```
+
+Features:
+- Interactive navigation through Teams > Spaces > Folders > Lists > Tasks
+- View detailed task information
+- Copy task IDs to clipboard
+- Color-coded interface for better visibility
+- Back and Exit options at every level
+
+Navigation:
+- Use arrow keys to select items
+- Select "Back" to go up one level
+- Select "Exit" to close the explorer
+- When viewing a task:
+  - Copy task ID to clipboard
+  - View task details including name, status, and description
+  - Return to task list or exit the explorer
+
+Example workflow:
+1. Select a team
+2. Navigate through spaces, folders, and lists
+3. Choose a task to view its details
+4. Copy the task ID or navigate back/exit
+
 ## Dependencies
 
 - axios: ^1.7.9
