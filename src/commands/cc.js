@@ -27,6 +27,7 @@ export const ccCommand = (program) => {
         await git.push();
         if (statuses.length > 1) {
           const userAnswer = await inquirer.prompt(formatListStatusesToInquirerPrompts(statuses));
+          const selectedStatus = statuses.find(status => status.status === userAnswer.status);
           console.log(userAnswer);
           if (userAnswer.status === "exit") {
             console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} status has not been changed!`));
@@ -34,8 +35,8 @@ export const ccCommand = (program) => {
           } else {
             await update(`task/${ticketID}`, { status: userAnswer.status });
             console.log(userAnswer.color);
-            console.log(chalk.hex(userAnswer.color).bold(`Ticket ${ticketID} status has been changed!`));
-            console.log(chalk.hex(userAnswer.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
+            console.log(chalk.hex(selectedStatus.color).bold(`Ticket ${ticketID} status has been changed!`));
+            console.log(chalk.hex(selectedStatus.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
           }
         } else {
           console.log(chalk.hex(ticketReturn.status.color).bold(`Ticket ${ticketID} has been committed and pushed!`));
