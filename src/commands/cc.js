@@ -61,9 +61,9 @@ const formatListStatusesToInquirerPrompts = (statuses) => {
     message: "What status would you like to move this ticket to?",
     choices: [
       ...statuses.map((status) => ({
-        name: chalk.hex(status.color)(status.status),
+        name: chalk.hex(status.color || "#808080")(status.status),
         value: status.status,
-        color: status.color,
+        color: status.color || "#808080",
       })),
       { name: chalk.gray("Exit"), value: "exit" },
     ],
