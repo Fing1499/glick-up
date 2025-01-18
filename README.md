@@ -97,6 +97,15 @@ glickup cc <ticketId> -d
 - Check the terminal output for error messages in color
 - API responses are logged when debug mode is enabled
 
+## References
+
+- [Postman Collection](https://www.postman.com/clickup-api/clickup-public-api/collection/rekuqnj/clickup-api-v2-reference)
+- [API Reference](https://developer.clickup.com/reference/createworkspaceauditlog)
+- [Chalk](https://github.com/chalk/chalk?tab=readme-ov-file)
+- [Simple Git](https://github.com/steveukx/git-js#readme)
+- [Commander](https://github.com/tj/commander.js#readme)
+- [Inquirer](https://github.com/SBoudrias/Inquirer.js/blob/main/packages/inquirer/README.md)
+
 ## License
 
 ISC
