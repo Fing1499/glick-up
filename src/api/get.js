@@ -5,7 +5,6 @@ const get = async (endpoint) => {
   console.log(process.env.CLICKUP_API_TOKEN)
   try {
     const response = await apiClient.get(endpoint)
-    console.log('get response', response)
     return response.data;
   } catch (err) {
     console.error(err)
